@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Vacantes Bticino</title>
     <style>
-        /* Variables de color */
         :root {
             --bticino-naranja: #f36c21;
             --blanco: #fff;
@@ -13,50 +12,42 @@
             --gris-claro: #f5f5f5;
             --gris-oscuro: #333;
         }
-
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--gris-claro);
             color: var(--negro);
         }
-
         header {
-            background-color: var(--blanco); /* Fondo blanco para buen contraste */
+            background-color: var(--blanco);
             padding: 1rem 2rem;
             display: flex;
             align-items: center;
             gap: 1rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
-
         header img {
             height: 50px;
         }
-
         header h1 {
             font-weight: 700;
             font-size: 1.8rem;
             margin: 0;
-            color: var(--negro); /* Texto negro */
+            color: var(--negro);
         }
-
         header h1 .letra-b {
-            color: var(--bticino-naranja); /* Solo la B en naranja */
+            color: var(--bticino-naranja);
         }
-
         main {
             max-width: 900px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
-
         .vacantes-list {
             display: grid;
             grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
             gap: 1.5rem;
         }
-
         .vacante-card {
             background-color: var(--blanco);
             border-radius: 8px;
@@ -67,26 +58,22 @@
             justify-content: space-between;
             transition: transform 0.2s ease;
         }
-
         .vacante-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
-
         .vacante-title {
             font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--bticino-naranja);
         }
-
         .vacante-info {
             font-size: 0.9rem;
             margin-bottom: 1rem;
             color: var(--gris-oscuro);
             flex-grow: 1;
         }
-
         .btn-postular {
             background-color: var(--bticino-naranja);
             color: var(--blanco);
@@ -99,19 +86,17 @@
             transition: background-color 0.3s ease;
             text-decoration: none;
             text-align: center;
+            display: inline-block;
         }
-
         .btn-postular:hover {
             background-color: #d95a18;
         }
-
         footer {
             margin-top: 4rem;
             text-align: center;
             font-size: 0.9rem;
             color: var(--gris-oscuro);
         }
-
         @media (max-width: 480px) {
             header h1 {
                 font-size: 1.3rem;
@@ -123,7 +108,7 @@
 
 <header>
     <img src="Bticino_logo.png" alt="Logo Bticino" />
-    <h1><span class="letra-b">Vacantes</span></h1>
+    <h1><span class="letra-b">B</span>ticino</h1>
 </header>
 
 <main>
@@ -135,7 +120,7 @@
             </p>
             <p><strong>Ubicación:</strong> Ciudad de México</p>
             <p><strong>Experiencia:</strong> 3+ años</p>
-            <a href="#" class="btn-postular">Postularse</a>
+            <a href="postular.html?vacante=Ingeniero%20de%20Proyectos" class="btn-postular">Postularse</a>
         </article>
 
         <article class="vacante-card">
@@ -145,7 +130,7 @@
             </p>
             <p><strong>Ubicación:</strong> Monterrey</p>
             <p><strong>Experiencia:</strong> 1+ años</p>
-            <a href="#" class="btn-postular">Postularse</a>
+            <a href="postular.html?vacante=T%C3%A9cnico%20Instalador" class="btn-postular">Postularse</a>
         </article>
 
         <article class="vacante-card">
@@ -155,7 +140,7 @@
             </p>
             <p><strong>Ubicación:</strong> Guadalajara</p>
             <p><strong>Experiencia:</strong> 2+ años</p>
-            <a href="#" class="btn-postular">Postularse</a>
+            <a href="postular.html?vacante=Ejecutivo%20de%20Ventas" class="btn-postular">Postularse</a>
         </article>
 
         <article class="vacante-card">
@@ -165,7 +150,7 @@
             </p>
             <p><strong>Ubicación:</strong> Ciudad de México</p>
             <p><strong>Experiencia:</strong> 2+ años</p>
-            <a href="#" class="btn-postular">Postularse</a>
+            <a href="postular.html?vacante=Analista%20de%20Calidad" class="btn-postular">Postularse</a>
         </article>
     </div>
 </main>
@@ -176,4 +161,3 @@
 
 </body>
 </html>
-
