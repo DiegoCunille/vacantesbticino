@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vacantes Bticino</title>
+  <title>Postularme - Bticino</title>
   <style>
     :root {
       --bticino-naranja: #f36c21;
-      --blanco: #fff;
-      --negro: #000;
-      --gris-fondo: #f2f2f2;
       --gris-industrial: #2c2c2c;
+      --gris-claro: #f5f5f5;
+      --negro: #000;
+      --blanco: #fff;
     }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--gris-fondo);
+      background-color: var(--gris-claro);
       color: var(--negro);
     }
 
@@ -24,11 +24,11 @@
       background-color: var(--gris-industrial);
       background-image: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
       background-repeat: repeat;
-      color: white;
       padding: 1.5rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      color: white;
       box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
 
@@ -36,8 +36,6 @@
       font-size: 2.3rem;
       font-weight: 800;
       margin: 0;
-      letter-spacing: 1px;
-      color: white;
       text-transform: uppercase;
     }
 
@@ -46,87 +44,58 @@
     }
 
     main {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 1rem;
     }
 
-    .vacantes-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-      gap: 2rem;
-    }
-
-    .vacante-card {
-      background-color: white;
+    .form-card {
+      background-color: var(--blanco);
+      padding: 2rem;
       border-left: 6px solid var(--bticino-naranja);
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
-    .vacante-card::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 5px;
-      background: linear-gradient(90deg, var(--bticino-naranja), #ff914d, var(--bticino-naranja));
-      animation: shine 3s linear infinite;
-    }
-
-    @keyframes shine {
-      0% { background-position: 0% }
-      100% { background-position: 100% }
-    }
-
-    .vacante-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-    }
-
-    .vacante-title {
-      font-size: 1.4rem;
-      font-weight: 700;
+    .form-card h2 {
       color: var(--bticino-naranja);
-      margin-bottom: 0.6rem;
+      margin-bottom: 1.2rem;
     }
 
-    .vacante-card p {
-      margin: 0.3rem 0;
-      font-size: 0.95rem;
-      color: #333;
+    label {
+      display: block;
+      margin: 1rem 0 0.3rem;
+      font-weight: 600;
     }
 
-    .lista {
-      margin-left: 1rem;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
+    input[type="text"],
+    input[type="email"],
+    input[type="file"] {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
     }
 
-    .lista li {
-      margin-bottom: 0.4rem;
+    input[type="file"] {
+      padding: 0.4rem;
     }
 
-    .btn-postular {
-      margin-top: auto;
+    button {
+      margin-top: 1.5rem;
       background-color: var(--bticino-naranja);
       color: white;
-      padding: 0.6rem 1.2rem;
       border: none;
+      padding: 0.8rem 1.5rem;
       border-radius: 6px;
+      font-size: 1rem;
       font-weight: bold;
-      text-decoration: none;
-      text-align: center;
-      transition: background 0.2s ease;
-      align-self: flex-start;
+      cursor: pointer;
+      transition: background 0.3s ease;
     }
 
-    .btn-postular:hover {
+    button:hover {
       background-color: #d95a18;
     }
 
@@ -137,50 +106,87 @@
       margin-top: 3rem;
       padding-bottom: 2rem;
     }
+
+    .vacante-nombre {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: var(--gris-industrial);
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Vacantes</h1>
-  <img src="Bticino_logo.png" alt="Logo Bticino">
+  <h1>Postulación</h1>
+  <img src="Bticino_logo.png" alt="Logo Bticino" />
 </header>
 
 <main>
-  <div class="vacantes-list">
+  <div class="form-card">
+    <h2>Enviar mi postulación</h2>
+    <p class="vacante-nombre" id="vacanteDisplay">Vacante:</p>
 
-    <!-- Vacante 1 -->
-    <article class="vacante-card">
-      <h2 class="vacante-title">Vendedor(a) Comercial</h2>
+    <form id="formPostular" enctype="multipart/form-data">
+      <input type="hidden" id="vacante" name="vacante" value="">
 
-      <p><strong>Perfil:</strong></p>
-      <ul class="lista">
-        <li>Ing. Eléctrico, Industrial, Administración o afín.</li>
-        <li>2 años de experiencia en ventas a canal distribución (material eléctrico, de construcción, acabados).</li>
-        <li>Desarrollo de estrategias de posicionamiento de marca.</li>
-        <li>Manejo de Excel.</li>
-      </ul>
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required>
 
-      <p><strong>Competencias:</strong></p>
-      <ul class="lista">
-        <li>Orientación al cliente y negocio</li>
-        <li>Sentido de resultado</li>
-        <li>Pensamiento lógico</li>
-        <li>Habilidades numéricas</li>
-      </ul>
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
 
-      <p><strong>Ubicación:</strong> Mérida, Monterrey, Guadalajara</p>
-      <a href="postular.html?vacante=Vendedor%20Comercial" class="btn-postular">Postularse</a>
-    </article>
+      <label for="cv">Sube tu CV (PDF):</label>
+      <input type="file" id="cv" name="cv" accept=".pdf" required>
 
-    <!-- Copia este bloque para las otras 8 vacantes -->
-
+      <button type="submit">Enviar</button>
+    </form>
   </div>
 </main>
 
 <footer>
   &copy; 2025 Bticino – Todos los derechos reservados
 </footer>
+
+<script>
+  const form = document.getElementById('formPostular');
+
+  // Mostrar vacante desde query param
+  const urlParams = new URLSearchParams(window.location.search);
+  const vacante = urlParams.get('vacante') || 'No especificada';
+  document.getElementById('vacanteDisplay').textContent = 'Vacante: ' + decodeURIComponent(vacante);
+  document.getElementById('vacante').value = decodeURIComponent(vacante);
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const cvInput = document.getElementById('cv');
+    const file = cvInput.files[0];
+    if (!file || file.type !== 'application/pdf') {
+      alert('Por favor sube un archivo PDF válido.');
+      return;
+    }
+
+    const formData = new FormData(form);
+
+    fetch('https://script.google.com/macros/s/AKfycbxEA46BDbiNktgLiQ7tmsv8SBAdyBr_LIvqQtI0-tRwjuXDeXNrhpSV3LOlDVIGcE5CSg/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(resp => resp.json())
+    .then(data => {
+      if(data.status === 'success'){
+        alert('Postulación enviada con éxito!');
+        form.reset();
+      } else {
+        alert('Error: ' + data.message);
+      }
+    })
+    .catch(err => {
+      alert('Error enviando el formulario: ' + err.message);
+    });
+  });
+</script>
 
 </body>
 </html>
