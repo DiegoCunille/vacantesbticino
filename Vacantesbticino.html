@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vacantes Bticino</title>
+  <style>
+    :root {
+      --bticino-naranja: #f36c21;
+      --blanco: #fff;
+      --negro: #000;
+      --gris-fondo: #f2f2f2;
+      --gris-industrial: #2c2c2c;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--gris-fondo);
+      color: var(--negro);
+    }
+
+    header {
+      background-color: var(--gris-industrial);
+      background-image: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+      background-repeat: repeat;
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin: 0;
+      letter-spacing: 1px;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    header img {
+      height: 55px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .vacantes-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 2rem;
+    }
+
+    .vacante-card {
+      background-color: white;
+      border-left: 6px solid var(--bticino-naranja);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .vacante-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 5px;
+      background: linear-gradient(90deg, var(--bticino-naranja), #ff914d, var(--bticino-naranja));
+      animation: shine 3s linear infinite;
+    }
+
+    @keyframes shine {
+      0% { background-position: 0% }
+      100% { background-position: 100% }
+    }
+
+    .vacante-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    .vacante-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--bticino-naranja);
+      margin-bottom: 0.6rem;
+    }
+
+    .vacante-card p {
+      margin: 0.3rem 0;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .lista {
+      margin-left: 1rem;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .lista li {
+      margin-bottom: 0.4rem;
+    }
+
+    .btn-postular {
+      margin-top: auto;
+      background-color: var(--bticino-naranja);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s ease;
+      align-self: flex-start;
+    }
+
+    .btn-postular:hover {
+      background-color: #d95a18;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 3rem;
+      padding-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Vacantes</h1>
+  <img src="Bticino_logo.png" alt="Logo Bticino">
+</header>
+
+<main>
+  <div class="vacantes-list">
+
+    <!-- Vacante 1 -->
+    <article class="vacante-card">
+      <h2 class="vacante-title">Vendedor(a) Comercial</h2>
+
+      <p><strong>Perfil:</strong></p>
+      <ul class="lista">
+        <li>Ing. Eléctrico, Industrial, Administración o afín.</li>
+        <li>2 años de experiencia en ventas a canal distribución (material eléctrico, de construcción, acabados).</li>
+        <li>Desarrollo de estrategias de posicionamiento de marca.</li>
+        <li>Manejo de Excel.</li>
+      </ul>
+
+      <p><strong>Competencias:</strong></p>
+      <ul class="lista">
+        <li>Orientación al cliente y negocio</li>
+        <li>Sentido de resultado</li>
+        <li>Pensamiento lógico</li>
+        <li>Habilidades numéricas</li>
+      </ul>
+
+      <p><strong>Ubicación:</strong> Mérida, Monterrey, Guadalajara</p>
+      <a href="postular.html?vacante=Vendedor%20Comercial" class="btn-postular">Postularse</a>
+    </article>
+
+    <!-- Copia este bloque para las otras 8 vacantes -->
+
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 Bticino – Todos los derechos reservados
+</footer>
+
+</body>
+</html>
+
+
